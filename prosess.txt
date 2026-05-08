@@ -1,5 +1,10 @@
 1.create folder
 2.node setup
+#npm init -y
+#npm i express
+#npm installed
+npm i jest
+npm i supertest
 3.create .ignore file
 4. create index.file
 5.create git reps
