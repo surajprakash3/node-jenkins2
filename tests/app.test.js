@@ -10,7 +10,8 @@ describe('Test the API', () => {
         expect(res.statusCode).toBe(200);
 
         expect(res.text.replace(/\s+/g, " ").trim()).toBe(
-            "<h1>Welcome to the app</h1> <h2>Name: Suraj prakash</h2>"
+            " <h1>Welcome to the app</h1>
+            < h2 > Name: Rohit Kumar</ > "
         );
     });
 
