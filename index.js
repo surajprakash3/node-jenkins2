@@ -8,7 +8,7 @@ app.use(express.json());
 app.get('/', async (req, res) => {
     res.send(`
         <h1>Welcome to the app</h1>
-        <h2>Name:Suraj prakash</h2>
+        <h2>Name: Rohit Kumar</h2>
     `);
 });
  
