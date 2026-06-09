@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: node-jenkins2
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins_devops
+
+  template:
+    metadata:
+      labels:
+        app: jenkins_devops
+
+    spec:
+      containers:
+        - name: node-jenkins2
+          image: surajprakash1/node-jenkins2:latest
+          ports:
+            - containerPort: 3000

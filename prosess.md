@@ -187,7 +187,7 @@ docker exec jenkins ls -la /var/run/docker.sock
 # run container 8000 and ec2 public app run 3000
 docker run -d \
   --name jenkins_devops_container \
-  -p 3000:8000 \
+  -p 3000:3000 \
   --restart unless-stopped \
   surajprakash1/jenkins_devops:latest
 

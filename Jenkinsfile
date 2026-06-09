@@ -70,23 +70,31 @@ pipeline {
                 """
             }
         }
-
-        stage('Run New Container') {
-            steps {
-                sh """
-                    docker run -d \
-                    --name ${CONTAINER_NAME} \
-                    -p ${PORT}:3000 \
-                    ${DOCKER_IMAGE}:${DOCKER_TAG}
-                """
+        stage('Deploy to Kubernetes'){
+        steps{
+            sh """
+                kubectl apply -f k8s-deployment.yaml
+                kubectl apply -f k8s-service.yaml
+            """
             }
         }
 
-        stage('Verify Deployment') {
-            steps {
-                sh 'docker ps'
-            }
-        }
+        // stage('Run New Container') {
+        //     steps {
+        //         sh """
+        //             docker run -d \
+        //             --name ${CONTAINER_NAME} \
+        //             -p ${PORT}:3000 \
+        //             ${DOCKER_IMAGE}:${DOCKER_TAG}
+        //         """
+        //     }
+        // }
+
+        // stage('Verify Deployment') {
+        //     steps {
+        //         sh 'docker ps'
+        //     }
+        // }
     }
 
     post {
